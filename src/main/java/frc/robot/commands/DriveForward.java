@@ -4,7 +4,7 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-
+//second commit
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -27,7 +27,7 @@ public class DriveForward extends Command {
   protected void execute() {
     if (Robot.isColorSensedBLue = true) {
       Robot.m_drivetrain.moveForward(0.5);
-    } else{
+    } else{      
       Robot.m_drivetrain.moveForward(0);
     }
     

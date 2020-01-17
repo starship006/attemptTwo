@@ -64,10 +64,10 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("Auto mode", m_chooser);
 
     //adds the target colors to the Color Match
-    m_colorMatcher.addColorMatch(kBlueTarget);
-    m_colorMatcher.addColorMatch(kGreenTarget);
-    m_colorMatcher.addColorMatch(kRedTarget);
-    m_colorMatcher.addColorMatch(kYellowTarget);    
+    m_Colormatch.addColorMatch(kBlueTarget);
+    m_Colormatch.addColorMatch(kGreenTarget);
+    m_Colormatch.addColorMatch(kRedTarget);
+    m_Colormatch.addColorMatch(kYellowTarget);    
   }
 
   /**
@@ -103,13 +103,23 @@ public class Robot extends TimedRobot {
       isColorSensedBLue = true;
     } else if (match.color == kRedTarget) {
       colorString = "Red";
+      isColorSensedBLue = false;
     } else if (match.color == kGreenTarget) {
       colorString = "Green";
+      isColorSensedBLue = false;
     } else if (match.color == kYellowTarget) {
       colorString = "Yellow";
+      isColorSensedBLue = false;
     } else {
       colorString = "Unknown";
+      isColorSensedBLue = false;
     }
+
+    SmartDashboard.putNumber("Red", detectedColor.red);
+    SmartDashboard.putNumber("Green", detectedColor.green);
+    SmartDashboard.putNumber("Blue", detectedColor.blue);
+    SmartDashboard.putNumber("Confidence", match.confidence);
+    SmartDashboard.putString("Detected Color", colorString);
   }
 
   /**
